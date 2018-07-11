@@ -1,0 +1,21 @@
+﻿[
+  "[apiService].[spWebEReqGetRequisitionReports]",
+  "[apiService].[spWebEReqApproveSpecimenList]",
+  "[apiService].[spWebEReqOpenSpecimenList]",
+  "[apiService].[spWebEReqCloseApproveSpecimens]",
+  "[apiService].[spWebEReqFacilityList]",
+  "[apiService].[spWebEReqFacilityFilter]",
+  "[apiService].[spWebEReqFacilityDetail]",
+  "[apiService].[spWebEReqGetPatientDetails]",
+  "[apiService].[spWebEReqGetPartiallyOpenChains]",
+  "[apiService].[spWebEReqSavePatient]",
+  "[apiService].[spWebEReqGetSavedChains]",
+  "[apiService].[spWebGetOnlineTabDetails]",
+  "[apiService].[spWebEReqSaveInsurance]",
+  "[apiService].[spWebEreqGetPOCT]",
+  "[apiService].[spWebEReqSaveOnlineTestResults]",
+  "[apiService].[spWebEreqGetMedication]"
+
+]
+  
+

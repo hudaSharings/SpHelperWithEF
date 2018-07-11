@@ -1,0 +1,34 @@
+c:\users\huda.ajmalkhan\documents\visual studio 2017\Projects\SpParamClassGenerater\SpParamClassGenerater\bin\Debug\SpParamClassGenerater.exe.config
+c:\users\huda.ajmalkhan\documents\visual studio 2017\Projects\SpParamClassGenerater\SpParamClassGenerater\bin\Debug\SpParamClassGenerater.exe
+c:\users\huda.ajmalkhan\documents\visual studio 2017\Projects\SpParamClassGenerater\SpParamClassGenerater\bin\Debug\SpParamClassGenerater.pdb
+c:\users\huda.ajmalkhan\documents\visual studio 2017\Projects\SpParamClassGenerater\SpParamClassGenerater\obj\Debug\SpParamClassGenerater.csprojResolveAssemblyReference.cache
+c:\users\huda.ajmalkhan\documents\visual studio 2017\Projects\SpParamClassGenerater\SpParamClassGenerater\obj\Debug\SpParamClassGenerater.Form1.resources
+c:\users\huda.ajmalkhan\documents\visual studio 2017\Projects\SpParamClassGenerater\SpParamClassGenerater\obj\Debug\SpParamClassGenerater.Properties.Resources.resources
+c:\users\huda.ajmalkhan\documents\visual studio 2017\Projects\SpParamClassGenerater\SpParamClassGenerater\obj\Debug\SpParamClassGenerater.SpParamClass.resources
+c:\users\huda.ajmalkhan\documents\visual studio 2017\Projects\SpParamClassGenerater\SpParamClassGenerater\obj\Debug\SpParamClassGenerater.csproj.GenerateResource.Cache
+c:\users\huda.ajmalkhan\documents\visual studio 2017\Projects\SpParamClassGenerater\SpParamClassGenerater\obj\Debug\SpParamClassGenerater.exe
+c:\users\huda.ajmalkhan\documents\visual studio 2017\Projects\SpParamClassGenerater\SpParamClassGenerater\obj\Debug\SpParamClassGenerater.pdb
+c:\users\huda.ajmalkhan\documents\visual studio 2017\Projects\SpParamClassGenerater\SpParamClassGenerater\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+c:\users\huda.ajmalkhan\documents\visual studio 2017\Projects\SpParamClassGenerater\SpParamClassGenerater\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+c:\users\huda.ajmalkhan\documents\visual studio 2017\Projects\SpParamClassGenerater\SpParamClassGenerater\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+C:\huda\SpParamClassGenerater\SpParamClassGenerater\bin\Debug\SpParamClassGenerater.exe.config
+C:\huda\SpParamClassGenerater\SpParamClassGenerater\bin\Debug\SpParamClassGenerater.exe
+C:\huda\SpParamClassGenerater\SpParamClassGenerater\bin\Debug\SpParamClassGenerater.pdb
+C:\huda\SpParamClassGenerater\SpParamClassGenerater\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\huda\SpParamClassGenerater\SpParamClassGenerater\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\huda\SpParamClassGenerater\SpParamClassGenerater\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+C:\huda\SpParamClassGenerater\SpParamClassGenerater\bin\Debug\Newtonsoft.Json.dll
+C:\huda\SpParamClassGenerater\SpParamClassGenerater\bin\Debug\Newtonsoft.Json.xml
+C:\huda\SpParamClassGenerater\SpParamClassGenerater\obj\Debug\SpParamClassGenerater.Add.resources
+C:\huda\SpParamClassGenerater\SpParamClassGenerater\obj\Debug\SpParamClassGenerater.Form1.resources
+C:\huda\SpParamClassGenerater\SpParamClassGenerater\obj\Debug\SpParamClassGenerater.Properties.Resources.resources
+C:\huda\SpParamClassGenerater\SpParamClassGenerater\obj\Debug\SpParamClassGenerater.SpParamClass.resources
+C:\huda\SpParamClassGenerater\SpParamClassGenerater\obj\Debug\SpParamClassGenerater.csproj.GenerateResource.Cache
+C:\huda\SpParamClassGenerater\SpParamClassGenerater\obj\Debug\SpParamClassGenerater.exe
+C:\huda\SpParamClassGenerater\SpParamClassGenerater\obj\Debug\SpParamClassGenerater.pdb
+C:\huda\SpParamClassGenerater\SpParamClassGenerater\obj\Debug\SpParamClassGenerater.csprojResolveAssemblyReference.cache
+C:\huda\SpParamClassGenerater\SpParamClassGenerater\obj\Debug\SpParamClassGenerater.Home.resources
+C:\huda\SpParamClassGenerater\SpParamClassGenerater\bin\Debug\EntityFramework.dll
+C:\huda\SpParamClassGenerater\SpParamClassGenerater\bin\Debug\EntityFramework.SqlServer.dll
+C:\huda\SpParamClassGenerater\SpParamClassGenerater\bin\Debug\EntityFramework.xml
+C:\huda\SpParamClassGenerater\SpParamClassGenerater\bin\Debug\EntityFramework.SqlServer.xml
