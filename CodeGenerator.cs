@@ -140,7 +140,7 @@ namespace SpParamClassGenerater
             if (!string.IsNullOrEmpty(conStr))
             {
                 SqlConnection con = new SqlConnection(conStr);
-                SqlCommand cmd = new SqlCommand($"sp_help '{spname}'", con);
+                SqlCommand cmd = new SqlCommand($"sp_help '{spname.Trim()}'", con);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dsReoports);
             }
@@ -447,6 +447,26 @@ namespace SpParamClassGenerater
             else
                 return $"_SpHelper.Query<{paramName}Result>(SP.{paramName},param)";
         }
+        //-- Get Splist from DB
+
+        public List<string> GetSpListFromDB(string schemaName = "dbo")
+        {
+            List<string> Sps = new List<string>();
+            using (SqlConnection con = new SqlConnection(Home.Constr))
+            {
+                SqlCommand cmd = new SqlCommand($"SELECT SchemaName = s.name,ProcedureName = pr.name FROM sys.procedures pr INNER JOIN sys.schemas s ON pr.schema_id = s.schema_id where s.name='{schemaName}'", con);
+                con.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    Sps.Add($" {dr["SchemaName"].ToString()}.{dr["ProcedureName"].ToString()}");
+                }
+
+
+            }
+            return Sps;
+        }
+
 
     }
 

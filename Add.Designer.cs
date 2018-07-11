@@ -38,7 +38,6 @@
             this.btnGo = new System.Windows.Forms.Button();
             this.txtNameSpace = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -59,10 +58,10 @@
             this.IsNonQuery,
             this.IsSingle,
             this.Column2});
-            this.dataGridView1.Location = new System.Drawing.Point(8, 71);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 44);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(1132, 383);
+            this.dataGridView1.Size = new System.Drawing.Size(1132, 410);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dataGridView1_UserDeletedRow);
@@ -121,7 +120,7 @@
             // 
             // txtNameSpace
             // 
-            this.txtNameSpace.Location = new System.Drawing.Point(93, 41);
+            this.txtNameSpace.Location = new System.Drawing.Point(93, 18);
             this.txtNameSpace.Name = "txtNameSpace";
             this.txtNameSpace.Size = new System.Drawing.Size(179, 20);
             this.txtNameSpace.TabIndex = 2;
@@ -129,21 +128,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 44);
+            this.label1.Location = new System.Drawing.Point(12, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(66, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "NameSpace";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(1051, 38);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Upload Json";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // checkBox1
             // 
@@ -208,7 +197,6 @@
             this.ClientSize = new System.Drawing.Size(1138, 531);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtNameSpace);
             this.Controls.Add(this.btnGo);
@@ -231,7 +219,6 @@
         private System.Windows.Forms.Button btnGo;
         private System.Windows.Forms.TextBox txtNameSpace;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label3;

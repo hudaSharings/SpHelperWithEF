@@ -15,6 +15,8 @@ namespace SpParamClassGenerater
         public static string Constr;
         public static bool IsSpHelper;
         public static string SphelperNamespace;
+        public static List<string> spList;
+        public static string Schema;
         public Home()
         {
             InitializeComponent();
@@ -54,8 +56,7 @@ namespace SpParamClassGenerater
                 else
                 {
                     SphelperNamespace = textBox1.Text.Trim();
-                    Add obj = new Add();
-                    obj.Show();
+                    ShowDialog();
                 }
             }
             else
@@ -116,6 +117,47 @@ namespace SpParamClassGenerater
             else MessageBox.Show("Connection Failure");
 
 
+        }
+
+
+
+        public void ShowDialog()
+        {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            openFileDialog1.Filter = "JSON Files|*.json";
+            openFileDialog1.Title = "Select a Json File";
+
+            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                System.IO.StreamReader sr = new
+                   System.IO.StreamReader(openFileDialog1.FileName);
+                string selectstr = sr.ReadToEnd();
+                //MessageBox.Show(sr.ReadToEnd());
+                sr.Close();
+                //spList = (from sp in Newtonsoft.Json.JsonConvert.DeserializeObject<List<string>>(selectstr)
+                //          select new SPlist
+                //          {
+                //              id = ++cout,
+                //              Spname = sp,
+                //              ClassName = string.Empty,
+                //              // MethodName=string.Empty,
+                //              // IsNonQuery=false,
+                //              //  IsSingle=false
+                //          }).ToList();
+                spList = Newtonsoft.Json.JsonConvert.DeserializeObject<List<string>>(selectstr);
+                Add obj = new Add();
+                obj.Preparesplist(spList);
+                obj.Show();
+                //Preparesplist();
+
+               // PrepareSPdetails();
+
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            new SpfromDb().ShowDialog();
         }
     }
 

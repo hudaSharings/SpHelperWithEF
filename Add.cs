@@ -13,7 +13,7 @@ namespace SpParamClassGenerater
 {
     public partial class Add : Form
     {
-        public static IList<SPlist> spList;
+        public static List<SPlist> spList;
         public static List<SpDetail> SpDetailList;
         int cout = 0;
         public Add()
@@ -21,6 +21,7 @@ namespace SpParamClassGenerater
             InitializeComponent();
             spList = new List<SPlist>();
             SpDetailList = new List<SpDetail>();
+           
         }
 
         private void Add_Load(object sender, EventArgs e)
@@ -63,22 +64,39 @@ namespace SpParamClassGenerater
                 string selectstr = sr.ReadToEnd();
                 //MessageBox.Show(sr.ReadToEnd());
                 sr.Close();
-                spList = (from sp in Newtonsoft.Json.JsonConvert.DeserializeObject<List<string>>(selectstr)
-                          select new SPlist
-                          {
-                              id = ++cout,
-                              Spname = sp,
-                              ClassName = string.Empty,
-                              // MethodName=string.Empty,
-                              // IsNonQuery=false,
-                              //  IsSingle=false
-                          }).ToList();
-              
+                //spList = (from sp in Newtonsoft.Json.JsonConvert.DeserializeObject<List<string>>(selectstr)
+                //          select new SPlist
+                //          {
+                //              id = ++cout,
+                //              Spname = sp,
+                //              ClassName = string.Empty,
+                //              // MethodName=string.Empty,
+                //              // IsNonQuery=false,
+                //              //  IsSingle=false
+                //          }).ToList();
+                 Preparesplist(Newtonsoft.Json.JsonConvert.DeserializeObject<List<string>>(selectstr));
+
                 PrepareSPdetails();
+
             }
-            LoadGrid();
+           
         }
 
+        public async void Preparesplist(List<string> lstSp)
+        {
+            spList = (from sp in lstSp
+             select new SPlist
+             {
+                 id = ++cout,
+                 Spname = sp,
+                 ClassName = string.Empty,
+                 // MethodName=string.Empty,
+                 // IsNonQuery=false,
+                 //  IsSingle=false
+             }).ToList();
+
+            LoadGrid();
+        }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             var senderGrid = (DataGridView)sender;
@@ -152,6 +170,11 @@ namespace SpParamClassGenerater
             }
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+             new SpfromDb().ShowDialog();
+            
+        }
     }
 
 
