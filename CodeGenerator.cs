@@ -68,7 +68,9 @@ namespace SpParamClassGenerater
                     clsmName = sp.Spname;
                     clsmName = clsmName.Replace("[", "");
                     clsmName = clsmName.Replace("]", "");
-                    clsmName = clsmName.Replace(".", "");
+                    //clsmName = clsmName.Replace(".", "");
+                    if(clsmName.Contains('.'))
+                    clsmName = clsmName.Split('.')[1];
                 }
 
                 var Params = GetSPDetails(sp.Spname, conStr)?.Parameters;
@@ -83,7 +85,7 @@ namespace SpParamClassGenerater
                 cls += "\n \t }";
                 JsonN += $"//{sp.Spname}" + " \n {" + jsn + " \n }";
                 queryText = CreateSqlQuery(conStr, sp.Spname);
-                resultCls += "\n " + GenerateResultClass(conStr, queryText, sp.ClassName, sp.Spname);
+                resultCls += "\n " + GenerateResultClass(conStr, queryText, clsmName, sp.Spname);
 
             }
             param = nspce += cls + "\n  }";
@@ -147,7 +149,7 @@ namespace SpParamClassGenerater
             else
             {
                 var _Database = DatabaseFactory.CreateDatabase("DefaultConnection");
-                var dbCommand = _Database.GetSqlStringCommand($"sp_help '{spname}'");
+                var dbCommand = _Database.GetSqlStringCommand($"sp_help '{spname.Trim()}'");
                 dsReoports = _Database.ExecuteDataSet(dbCommand);
             }
             SpDetail sp = new SpDetail();
