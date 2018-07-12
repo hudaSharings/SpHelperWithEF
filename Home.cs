@@ -24,7 +24,7 @@ namespace SpParamClassGenerater
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Constr= Constr?? txtconstr.Text;
+            Constr = Constr ?? txtconstr.Text;
             if (CheckConnection())
             {
                 if (checkBox1.Checked && string.IsNullOrEmpty(textBox1.Text))
@@ -150,14 +150,54 @@ namespace SpParamClassGenerater
                 obj.Show();
                 //Preparesplist();
 
-               // PrepareSPdetails();
+                // PrepareSPdetails();
 
             }
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            new SpfromDb().ShowDialog();
+
+            Constr = Constr ?? txtconstr.Text;
+            if (CheckConnection())
+            {
+                if (checkBox1.Checked && string.IsNullOrEmpty(textBox1.Text))
+                {
+                    MessageBox.Show("Please Provide Name space For SpHelper");
+                }
+                else
+                {
+                    new SpfromDb().ShowDialog();
+                }
+            }
+            else
+                MessageBox.Show("Please Provide Valid Connection string");
+
+
+        }
+
+        private void Home_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
+            if (CheckConnection())
+                new SingleTable().ShowDialog();
+
+            else
+                MessageBox.Show("Please Provide Valid Connection string");
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (CheckConnection())
+                new MultipleTables().ShowDialog();
+
+            else
+                MessageBox.Show("Please Provide Valid Connection string");
         }
     }
 

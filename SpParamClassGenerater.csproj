@@ -85,9 +85,27 @@
     <Compile Include="Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
+    <Compile Include="MultipleTables.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MultipleTables.Designer.cs">
+      <DependentUpon>MultipleTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MultipleTablesResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MultipleTablesResult.Designer.cs">
+      <DependentUpon>MultipleTablesResult.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="GenerateSphelper.cs" />
+    <Compile Include="SingleTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SingleTable.Designer.cs">
+      <DependentUpon>SingleTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="SpfromDb.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +127,12 @@
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MultipleTables.resx">
+      <DependentUpon>MultipleTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MultipleTablesResult.resx">
+      <DependentUpon>MultipleTablesResult.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -118,6 +142,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SingleTable.resx">
+      <DependentUpon>SingleTable.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SpfromDb.resx">
       <DependentUpon>SpfromDb.cs</DependentUpon>
     </EmbeddedResource>

@@ -343,7 +343,7 @@ namespace SpParamClassGenerater
                 //storedProcedureText = "SET FMTONLY ON;" + storedProcedureText;
                 SqlCommand sqlCmd = new SqlCommand(storedProcedureText, sqlCon);
                 sqlCon.Open();
-              //  SqlDataReader sqlReader = sqlCmd.ExecuteReader(CommandBehavior.SchemaOnly);
+                //  SqlDataReader sqlReader = sqlCmd.ExecuteReader(CommandBehavior.SchemaOnly);
                 SqlDataReader sqlReader = sqlCmd.ExecuteReader();
                 while (sqlReader.FieldCount != 0)
                 {
@@ -470,75 +470,58 @@ namespace SpParamClassGenerater
         }
 
         //-- Table to class
-        public string ConvertTableToClass(string tblName)
+      
+        public string TableToClass(string tblName)
         {
+            StringBuilder sb = new StringBuilder();
             using (SqlConnection con = new SqlConnection(Home.Constr))
             {
-                string qry = @"declare @TableName sysname = '-TBL-'
-declare @Result varchar(max) = 'public class ' + @TableName + '
-{'
-
-select @Result = @Result + '
-    public ' + ColumnType + NullableSign + ' ' + ColumnName + ' { get; set; }
-'
-from
-(
-    select 
-        replace(col.name, ' ', '_') ColumnName,
-        column_id ColumnId,
-        case typ.name 
-            when 'bigint' then 'long'
-            when 'binary' then 'byte[]'
-            when 'bit' then 'bool'
-            when 'char' then 'string'
-            when 'date' then 'DateTime'
-            when 'datetime' then 'DateTime'
-            when 'datetime2' then 'DateTime'
-            when 'datetimeoffset' then 'DateTimeOffset'
-            when 'decimal' then 'decimal'
-            when 'float' then 'float'
-            when 'image' then 'byte[]'
-            when 'int' then 'int'
-            when 'money' then 'decimal'
-            when 'nchar' then 'string'
-            when 'ntext' then 'string'
-            when 'numeric' then 'decimal'
-            when 'nvarchar' then 'string'
-            when 'real' then 'double'
-            when 'smalldatetime' then 'DateTime'
-            when 'smallint' then 'short'
-            when 'smallmoney' then 'decimal'
-            when 'text' then 'string'
-            when 'time' then 'TimeSpan'
-            when 'timestamp' then 'DateTime'
-            when 'tinyint' then 'Byte'
-            when 'uniqueidentifier' then 'Guid'
-            when 'varbinary' then 'byte[]'
-            when 'varchar' then 'string'
-            else 'UNKNOWN_' + typ.name
-        end ColumnType,
-        case 
-            when col.is_nullable = 1 and typ.name in ('bigint', 'bit', 'date', 'datetime', 'datetime2', 'datetimeoffset', 'decimal', 'float', 'int', 'money', 'numeric', 'real', 'smalldatetime', 'smallint', 'smallmoney', 'time', 'tinyint', 'uniqueidentifier') 
-            then '?' 
-            else '' 
-        end NullableSign
-    from sys.columns col
-        join sys.types typ on
-            col.system_type_id = typ.system_type_id AND col.user_type_id = typ.user_type_id
-    where object_id = object_id(@TableName)
-) t
-order by ColumnId
-
-set @Result = @Result  + '
-}'
-Select @Result";
-                qry = qry.Replace("-TBL-", tblName);
-                SqlCommand cmd = new SqlCommand(qry, con);
-                con.Open();
-                string result = cmd.ExecuteScalar().ToString();
-                con.Close();
-                return result;
+                DataSet ds = new DataSet();
+                SqlCommand cmd = new SqlCommand($"sp_help '{tblName.Trim()}'", con);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(ds);
+                sb.Append($"\n \tpublic partial class {tblName}");
+                sb.Append("\n \t {");
+                for (int i = 0; i < ds.Tables[1].Rows.Count; i++)
+                {
+                    sb.Append($"\n \t\t public { GetNetDataType(ds.Tables[1].Rows[i]["Type"].ToString())} {ds.Tables[1].Rows[i]["Column_name"].ToString()} " + "{ get; set; }");
+                }
+                sb.Append("\n \t }");
             }
+            return sb.ToString();
+        }
+
+        public List<string> GetTableList()
+        {
+            List<string> lst = new List<string>();
+            using (SqlConnection con = new SqlConnection(Home.Constr))
+            {
+                SqlCommand cmd = new SqlCommand("SELECT name FROM sysobjects WHERE xtype='U' ", con);
+                con.Open();
+               SqlDataReader dr= cmd.ExecuteReader();
+                while(dr.Read())
+                {
+                    lst.Add(dr["name"].ToString());
+                }
+                con.Close();
+            }
+            return lst;
+        }
+
+
+        public string GetTableModel(string nameSpce,List<string> tbls)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append("using System; \n");
+            sb.Append($"\n namespace {nameSpce}");
+            sb.Append("\n {");
+            foreach (var item in tbls)
+            {
+                sb.Append(TableToClass(item));
+            }
+            sb.Append("\n }");
+
+            return sb.ToString();
         }
     }
 

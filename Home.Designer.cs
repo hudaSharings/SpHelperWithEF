@@ -48,6 +48,9 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -63,28 +66,28 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(420, 145);
+            this.button1.Location = new System.Drawing.Point(323, 146);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(148, 68);
+            this.button1.Size = new System.Drawing.Size(113, 33);
             this.button1.TabIndex = 1;
-            this.button1.Text = "Single";
+            this.button1.Text = "Single- SP";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(574, 145);
+            this.button2.Location = new System.Drawing.Point(442, 145);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(148, 33);
             this.button2.TabIndex = 2;
-            this.button2.Text = "Multiple Using json";
+            this.button2.Text = "Multiple - SP (JSON)";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(15, 174);
+            this.checkBox1.Location = new System.Drawing.Point(16, 148);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(117, 17);
             this.checkBox1.TabIndex = 4;
@@ -95,7 +98,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Location = new System.Drawing.Point(138, 151);
+            this.groupBox1.Location = new System.Drawing.Point(12, 173);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(276, 47);
             this.groupBox1.TabIndex = 5;
@@ -244,20 +247,52 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(574, 182);
+            this.button4.Location = new System.Drawing.Point(597, 144);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(148, 33);
+            this.button4.Size = new System.Drawing.Size(121, 33);
             this.button4.TabIndex = 7;
-            this.button4.Text = "Multiple From DB";
+            this.button4.Text = "Multiple - SP (DB)";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(596, 190);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(126, 33);
+            this.button5.TabIndex = 10;
+            this.button5.Text = "Multiple - Table (DB)";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(442, 191);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(148, 33);
+            this.button6.TabIndex = 9;
+            this.button6.Text = "Multiple - Table ( JSON)";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(323, 191);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(113, 33);
+            this.button7.TabIndex = 8;
+            this.button7.Text = "Single- Table";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(728, 225);
+            this.ClientSize = new System.Drawing.Size(728, 231);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.button7);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.groupBox1);
@@ -267,6 +302,7 @@
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
+            this.Load += new System.EventHandler(this.Home_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
@@ -301,5 +337,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
     }
 }

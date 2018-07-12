@@ -55,3 +55,6 @@ D:\SpParamClassGenerater\SpParamClassGenerater\bin\Debug\EntityFramework.SqlServ
 D:\SpParamClassGenerater\SpParamClassGenerater\bin\Debug\Newtonsoft.Json.xml
 D:\SpParamClassGenerater\SpParamClassGenerater\obj\Debug\SpParamClassGenerater.SpfromDb.resources
 D:\SpParamClassGenerater\SpParamClassGenerater\obj\Debug\SpParamClassGenerater.csprojResolveAssemblyReference.cache
+D:\SpParamClassGenerater\SpParamClassGenerater\obj\Debug\SpParamClassGenerater.SingleTable.resources
+D:\SpParamClassGenerater\SpParamClassGenerater\obj\Debug\SpParamClassGenerater.MultipleTables.resources
+D:\SpParamClassGenerater\SpParamClassGenerater\obj\Debug\SpParamClassGenerater.MultipleTablesResult.resources
