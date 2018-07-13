@@ -76,7 +76,7 @@ namespace SpParamClassGenerater
                 //          }).ToList();
                  Preparesplist(Newtonsoft.Json.JsonConvert.DeserializeObject<List<string>>(selectstr));
 
-                PrepareSPdetails();
+                PrepareSPdetails(); 
 
             }
            

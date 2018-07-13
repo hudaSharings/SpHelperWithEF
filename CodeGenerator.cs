@@ -35,9 +35,11 @@ namespace SpParamClassGenerater
                     ContName = item.Spname;
                     ContName = ContName.Replace("[", "");
                     ContName = ContName.Replace("]", "");
-                    ContName = ContName.Replace(".", "");
+                    //ContName = ContName.Replace(".", "");
+                    if (ContName.Contains('.'))
+                        ContName = ContName.Split('.')[1];
                 }
-                sbuilder.Append($"\n public const string {ContName} = \"{item.Spname}\"; \n");
+                sbuilder.Append($"\n public const string {ContName} = \"{item.Spname.Trim()}\"; \n");
             }
 
             sbuilder.Append("\n \t \t \t }");
@@ -379,7 +381,13 @@ namespace SpParamClassGenerater
             {
                 if (Errors.Any(x => x.Key == sp.Spname))
                     continue;
-                string methodName = sp.MethodName ?? $"Execute{sp.Spname}";
+                string spName =sp.Spname.Trim();
+                spName = spName.Replace("[", "");
+                spName = spName.Replace("]", "");
+                //autoMethodName = autoMethodName.Replace(".", "");
+                if (spName.Contains('.'))
+                    spName = spName.Split('.')[1];
+                string methodName = sp.MethodName ?? $"Execute{spName.Trim()}";
                 methodName = methodName.Replace("[", "");
                 methodName = methodName.Replace("]", "");
                 methodName = methodName.Replace(".", "");
@@ -441,7 +449,9 @@ namespace SpParamClassGenerater
                 paramName = param.Spname;
                 paramName = paramName.Replace("[", "");
                 paramName = paramName.Replace("]", "");
-                paramName = paramName.Replace(".", "");
+                // paramName = paramName.Replace(".", "");
+                if (paramName.Contains('.'))
+                    paramName = paramName.Split('.')[1];
             }
 
             if (param.IsNonQuery)

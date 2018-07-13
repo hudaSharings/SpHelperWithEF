@@ -96,6 +96,11 @@ namespace SpParamClassGenerater
 
         private void button3_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(textBox2.Text) || string.IsNullOrEmpty(textBox3.Text))
+            {
+                MessageBox.Show("Please Provide Server Name and DataBase Name to connect");
+                return;
+            }
             string constr = $"Data Source={textBox2.Text};Initial Catalog={textBox3.Text};Integrated Security={(checkBox2.Checked ? "True" : "False")};";
             if (!checkBox2.Checked)
             {
